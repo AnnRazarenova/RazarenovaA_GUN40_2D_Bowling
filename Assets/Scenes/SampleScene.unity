@@ -1644,6 +1644,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 7991939466646367228, guid: 5a3708f6c50632a4a8e4efac13f1ca73, type: 3}
+      propertyPath: lineColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7991939466646367228, guid: 5a3708f6c50632a4a8e4efac13f1ca73, type: 3}
+      propertyPath: lineColor.g
+      value: 0.87058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 7991939466646367228, guid: 5a3708f6c50632a4a8e4efac13f1ca73, type: 3}
+      propertyPath: lineColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7991939466646367228, guid: 5a3708f6c50632a4a8e4efac13f1ca73, type: 3}
+      propertyPath: trajectoryLine
+      value: 
+      objectReference: {fileID: 9076336497226077631}
     - target: {fileID: 8403395601544011726, guid: 5a3708f6c50632a4a8e4efac13f1ca73, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.19
@@ -1689,6 +1705,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a3708f6c50632a4a8e4efac13f1ca73, type: 3}
+--- !u!120 &9076336497226077631 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 21369509492701881, guid: 5a3708f6c50632a4a8e4efac13f1ca73, type: 3}
+  m_PrefabInstance: {fileID: 9076336497226077630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,0 +1,34 @@
+{
+    "name": "BallControls",
+    "maps": [
+        {
+            "name": "Ball",
+            "id": "a9f8151c-7626-48ec-8bc9-167f75d6bd9a",
+            "actions": [
+                {
+                    "name": "ThrowBall",
+                    "type": "Button",
+                    "id": "edd00600-bd2c-4a50-9a2d-f10d02585cd9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f0e42742-5e85-4561-be2c-b252974a20f6",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThrowBall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
