@@ -12,21 +12,32 @@ public class PushBall : MonoBehaviour
     private float minThrust = 5f;
     [SerializeField, Tooltip("Максимальная сила броска")]
     private float maxThrust = 15f;
+    [SerializeField, Tooltip("Текущая сила броска")]
     private float currentThrust = 10f;
     [SerializeField, Tooltip("Скорость изменения силы броска")]
     private float thrustSpeedChange = 1f;
     
     private Rigidbody rb;
-    private Camera playerCam;
+    //private Camera playerCam;
     private TrajectoryDrawer trajectoryDrawer;
 
     private bool isChanging = false;
     private bool increasing = true;
 
+    private BallControls ballControls;
+
+    private void Awake()
+    {
+        ballControls = new BallControls();
+
+        ballControls.Ball.ThrowBall.started += OnThrowBall;
+        ballControls.Ball.ThrowBall.canceled += OnThrowBall;
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        playerCam = Camera.main;
+        //playerCam = Camera.main;
 
         trajectoryDrawer = GetComponent<TrajectoryDrawer>();
     }
@@ -37,11 +48,11 @@ public class PushBall : MonoBehaviour
         {
             UpdateThrust();
 
-            trajectoryDrawer.DrawTrajectory();
+            trajectoryDrawer.DrawTrajectory(transform.position, transform.forward*currentThrust, currentThrust, minThrust, maxThrust);
         }
     }
 
-    private void OnThrowBall(InputAction.CallbackContext context)
+    public void OnThrowBall(InputAction.CallbackContext context)
     {
         if (context.started)
         {
@@ -59,7 +70,7 @@ public class PushBall : MonoBehaviour
         currentThrust = minThrust;
         increasing = true;
 
-        trajectoryDrawer.ShowTrajectory();
+        trajectoryDrawer.ShowTrajectory(true);
 
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
@@ -71,7 +82,7 @@ public class PushBall : MonoBehaviour
         {
             currentThrust += thrustSpeedChange * Time.fixedDeltaTime;
 
-            if (currentThrust < maxThrust)
+            if (currentThrust >= maxThrust)
             {
                 currentThrust = maxThrust;
                 increasing = false;
@@ -93,10 +104,23 @@ public class PushBall : MonoBehaviour
     {
         isChanging = false;
 
-        trajectoryDrawer.ShowTrajectory();
+        rb.useGravity = true;
 
-        Vector3 direction = playerCam.transform.forward;
-        rb.AddForce(direction *  currentThrust);
+        trajectoryDrawer.ShowTrajectory(false);
+
+        Vector3 direction = transform.forward;
+
+        rb.AddForce(direction *  currentThrust, ForceMode.Impulse);
         //rb.AddForce(direction *  currentThrust, ForceMode.Impulse);
+    }    
+    
+    private void OnEnable()
+    {
+        ballControls.Ball.Enable();
+    }
+
+    private void OnDisable()
+    {
+        ballControls.Ball.Disable();
     }
 }
