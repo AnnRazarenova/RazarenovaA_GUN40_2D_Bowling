@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 39038854}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07747841, y: 3.8395233, z: 13.9571085}
+  m_LocalPosition: {x: 0, y: 0.51, z: 14.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1403,7 +1403,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746580969}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 49c0caff4bd5db845be0f7870980288d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1557,11 +1557,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -9128442400593514834, guid: 5a3708f6c50632a4a8e4efac13f1ca73, type: 3}
       propertyPath: minThrust
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -9128442400593514834, guid: 5a3708f6c50632a4a8e4efac13f1ca73, type: 3}
       propertyPath: currentThrust
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -9128442400593514834, guid: 5a3708f6c50632a4a8e4efac13f1ca73, type: 3}
       propertyPath: thrustSpeedChange
@@ -1581,7 +1581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3106237679646016560, guid: 5a3708f6c50632a4a8e4efac13f1ca73, type: 3}
       propertyPath: m_CenterOfMass.y
-      value: 0.16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6443413488896461985, guid: 5a3708f6c50632a4a8e4efac13f1ca73, type: 3}
       propertyPath: m_Materials.Array.data[0]
