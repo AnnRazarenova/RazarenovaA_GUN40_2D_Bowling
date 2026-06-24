@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,23 +5,27 @@ using UnityEngine.InputSystem;
 public class PushBall : MonoBehaviour
 {
     [Header("Настройка силы броска шара")]
+
     [SerializeField, Tooltip("Минимальная сила броска")]
     private float minThrust = 5f;
+
     [SerializeField, Tooltip("Максимальная сила броска")]
-    private float maxThrust = 15f;
+    private float maxThrust = 20f;
+
     [SerializeField, Tooltip("Текущая сила броска")]
-    private float currentThrust = 10f;
+    private float currentThrust = 5f;
+
     [SerializeField, Tooltip("Скорость изменения силы броска")]
     private float thrustSpeedChange = 1f;
     
     private Rigidbody rb;
-    //private Camera playerCam;
     private TrajectoryDrawer trajectoryDrawer;
 
     private bool isChanging = false;
     private bool increasing = true;
 
     private BallControls ballControls;
+    public float CurrentThrust { get { return currentThrust; }}
 
     private void Awake()
     {
@@ -37,7 +38,6 @@ public class PushBall : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //playerCam = Camera.main;
 
         trajectoryDrawer = GetComponent<TrajectoryDrawer>();
     }
@@ -111,7 +111,6 @@ public class PushBall : MonoBehaviour
         Vector3 direction = transform.forward;
 
         rb.AddForce(direction *  currentThrust, ForceMode.Impulse);
-        //rb.AddForce(direction *  currentThrust, ForceMode.Impulse);
     }    
     
     private void OnEnable()
