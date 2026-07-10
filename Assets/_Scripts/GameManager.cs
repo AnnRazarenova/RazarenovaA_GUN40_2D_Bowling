@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour
                 _rollsLeft = 1;
             }
             else
-            if (_totalGameScore < _maxPins || _totalGameScore > _maxPins)//Strike or open or miss =>
+            if (_totalGameScore < _maxPins || _totalGameScore > _maxPins)
             {
                 _result = Result.Open;
                 EndGame();

@@ -10,19 +10,6 @@ public class ScoreManager : MonoBehaviour
 
     public bool IsFell { get { return _isFell; } }
 
-    //private void OnEnable()
-    //{
-    //    GameManager.OnResetPins += CountReset; 
-    //    GameManager.OnGameRestarted += CountReset;
-    //}
-
-    //private void OnDestroy()
-    //{
-    //    GameManager.OnGameRestarted -= CountReset;
-    //    GameManager.OnResetPins -= CountReset;
-    //}
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 3 || other.gameObject.layer == 6)
