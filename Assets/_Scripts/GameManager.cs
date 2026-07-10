@@ -197,8 +197,6 @@ public class GameManager : MonoBehaviour
                 _ballInGame = Instantiate(_ballPrefab, _ballPoint.transform.position, _pinsPrefab.transform.rotation);
                 _pinsInGame = Instantiate(_pinsPrefab, _pinsPoint.transform.position, _ballPrefab.transform.rotation);
 
-                //OnResetPins?.Invoke();
-
                 _fallenPinsCount = 0;
 
                 UpdateScoreUI(_totalGameScore);
@@ -221,15 +219,11 @@ public class GameManager : MonoBehaviour
                 }
                 Destroy(_ballInGame);
 
-                //OnResetPins?.Invoke();
-
                 _fallenPinsCount = 0;
 
                 UpdateScoreUI(_totalGameScore);
 
                 _ballInGame = Instantiate(_ballPrefab, _ballPoint.transform.position, _pinsPrefab.transform.rotation);
-                ////////////////
-
             }
 
             
