@@ -41,7 +41,7 @@ public partial class @BallControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f0e42742-5e85-4561-be2c-b252974a20f6"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
